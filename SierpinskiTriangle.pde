@@ -11,13 +11,13 @@ public void draw()
 {
   background(255);
   fill(123, 135, 235);
-
+println(l);
   sierpinski(mouseX-l/2, mouseY-l/2, l);
 }
 public void mouseWheel(MouseEvent event)//optional
 {
   int e = event.getAmount() * 25;
-  println(e);
+  
   if (  goBig == true )
   {
     l += e;
