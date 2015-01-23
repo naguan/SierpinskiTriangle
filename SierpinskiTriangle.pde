@@ -17,6 +17,7 @@ public void draw()
 public void mouseWheel(MouseEvent event)//optional
 {
   int e = event.getAmount() * 25;
+  println(e);
   if (  goBig == true )
   {
     l += e;
