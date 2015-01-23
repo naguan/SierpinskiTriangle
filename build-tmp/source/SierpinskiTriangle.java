@@ -1,3 +1,19 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class SierpinskiTriangle extends PApplet {
+
 public int l = 100;
 public boolean goBig = true;
 public int r = 0;
@@ -16,7 +32,7 @@ public void draw()
 }
 public void mouseWheel(MouseEvent event)//optional
 {
-  float e = event.getAmount() * 25;
+  float e = event.getAmount() * 50;
   if (  goBig == true )
   {
     l += e;
@@ -44,5 +60,14 @@ public void sierpinski(int x, int y, int len)
     sierpinski(x, y, len/2);
     sierpinski(x+len/2, y, len/2);
     sierpinski(x+len/4, y+len/2, len/2);
+  }
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "SierpinskiTriangle" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
   }
 }
